@@ -8,7 +8,7 @@ A responsive, production-ready clone of the [Accredian Enterprise](https://enter
 
 ## 🌊 Live Demo
 
-> **[View Live Demo →](https://your-deployment-url.vercel.app)**
+> **[View Live Demo →](https://accredian-enterprise-chi.vercel.app)**
 
 ---
 
