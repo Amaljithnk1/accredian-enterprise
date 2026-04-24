@@ -1,62 +1,56 @@
-# Accredian Enterprise Landing Page
+# Accredian Enterprise Page (Assignment Submission)
 
-A responsive, production-ready clone of the [Accredian Enterprise](https://enterprise.accredian.com) landing page, reimagined with a **bioluminescent underwater butterfly theme**. Built with modern web technologies for the full-stack development assignment.
+Partial clone of [Accredian Enterprise](https://enterprise.accredian.com/) built with Next.js App Router using reusable, responsive components and a lead capture API.
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-38bdf8?logo=tailwindcss)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript)
+## Live Demo
 
-## 🌊 Live Demo
+- [https://accredian-enterprise-chi.vercel.app](https://accredian-enterprise-chi.vercel.app)
 
-> **[View Live Demo →](https://accredian-enterprise-chi.vercel.app)**
+## Tech Stack
 
----
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
+- Framer Motion
+- Next.js API Routes
+- Vercel (deployment)
 
-## 📋 Project Overview
+## Scope Implemented
 
-This project recreates the Accredian Enterprise corporate training landing page with a unique **bioluminescent underwater daylight** visual theme. Key features include:
+- Landing page sections:
+  - Navbar
+  - Hero
+  - Stats
+  - Clients
+  - Accredian Edge
+  - Domain Expertise
+  - Course Segmentation
+  - How It Works
+  - FAQs
+  - Testimonials
+  - Footer
+- Smooth section navigation via anchor links
+- Responsive UI across mobile, tablet, and desktop breakpoints
+- Reusable component-based architecture
+- Lead capture modal connected to `/api/leads`
 
-- **Bioluminescent Butterfly Animation** — An HTML5 Canvas butterfly that follows the user's scroll position, flapping wings with particle trail effects
-- **Caustic Light Effects** — Animated dappled underwater light patterns across the page background
-- **Depth-Based Color Transitions** — Background color deepens from bright turquoise to deep aqua as users scroll
-- **Frosted Glass UI** — All cards and UI elements use glassmorphism with backdrop blur
-- **Lead Capture System** — Modal form with validation, connected to a Next.js API route
-- **11 Fully Responsive Sections** — Navbar, Hero, Stats, Clients, Accredian Edge, Domain Expertise, Course Segmentation, How It Works, FAQs, Testimonials, Footer
-- **Smooth Scroll Animations** — Framer Motion-powered section reveals and interactive elements
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| **Next.js 14** (App Router) | React framework, routing, API routes |
-| **TypeScript** | Type safety |
-| **Tailwind CSS v4** | Utility-first styling |
-| **Framer Motion** | Scroll animations, section reveals, accordion |
-| **HTML5 Canvas** | Butterfly + particle system (60fps) |
-| **Lucide React** | Icon library |
-| **Vercel** | Deployment platform |
-
-## 🚀 Setup & Installation
+## Setup Instructions
 
 ### Prerequisites
-- Node.js 18+ 
-- npm 9+
 
-### Steps
+- Node.js 18+
+- npm
+
+### Run Locally
 
 ```bash
-# Clone the repository
-git clone <repository-url>
+git clone <your-github-repo-url>
 cd accredian-enterprise
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open `http://localhost:3000`.
 
 ### Production Build
 
@@ -65,98 +59,66 @@ npm run build
 npm start
 ```
 
-## 🎨 Design Decisions
+## Approach Taken
 
-### Why Underwater Bioluminescent Theme?
-The brief called for a unique visual identity. The underwater daylight caustic theme was chosen because:
-- It provides a **premium, immersive feel** that differentiates from standard corporate sites
-- Bioluminescence naturally maps to the "illumination through learning" brand narrative
-- The gradual depth progression creates a sense of **journey and discovery** as users scroll
-- Light effects like caustics add visual richness without compromising readability
+- Broke the page into independent reusable sections under `src/components`.
+- Kept all static content centralized in `src/lib/constants.ts` for easy updates.
+- Used utility-first Tailwind styling for consistency and faster iteration.
+- Added Framer Motion transitions for subtle section-level polish.
+- Implemented a simple API route (`src/app/api/leads/route.ts`) for lead submissions.
 
-### Why HTML5 Canvas over Three.js/R3F?
-- The butterfly animation is fundamentally 2D (wing flapping with particles)
-- Canvas adds **~0KB bundle** vs React Three Fiber's **~200KB+**
-- Simpler SSR handling with dynamic import
-- Achieves smooth 60fps with lower overhead
-- Mobile-optimized: automatically reduces particle count and butterfly size
+## AI Usage (Required)
 
-### Glassmorphism Design Language
-All interactive elements use frosted glass (white 60% opacity + backdrop blur). This:
-- Maintains readability over the dynamic underwater background
-- Creates visual hierarchy and depth
-- Aligns with modern design trends
+AI tools were used during development to accelerate planning and implementation.
 
-## 🤖 AI Tools Usage
+### Where AI Helped
 
-This project was developed with AI assistance:
+- Generated initial component scaffolding and layout structure.
+- Suggested responsive utility class patterns and animation variants.
+- Helped with API route boilerplate and validation flow.
+- Assisted README drafting and cleanup.
 
-| Tool | Role |
-|---|---|
-| **Claude** | Architecture planning, component design, content structure |
-| **Antigravity** (Google DeepMind) | Code generation, implementation, debugging, file management |
+### What Was Modified/Improved Manually
 
-### How AI Was Used
-1. **Planning Phase**: Claude helped define the project architecture, component hierarchy, and design system
-2. **Implementation Phase**: Antigravity generated all component code, CSS design system, API routes, and deployment configuration
-3. **Debugging**: Antigravity identified and fixed build errors, TypeScript issues, and animation performance problems
-4. **Documentation**: This README and code comments were AI-assisted
+- Refined section content, spacing, and visual hierarchy.
+- Adjusted responsive behavior across breakpoints.
+- Updated testimonial section to show all three cards, including Reliance.
+- Verified build output and corrected mismatches between docs and implementation.
+- Reviewed generated code and made iterative UX/content fixes.
 
-All AI-generated code was reviewed for correctness, accessibility, and performance.
+## Improvements With More Time
 
-## 📱 Responsive Design
+- Persist leads to a real database instead of file storage.
+- Add anti-spam/rate-limiting for the lead endpoint.
+- Add automated tests (unit + integration + e2e).
+- Improve accessibility audit (keyboard flow, contrast, ARIA review).
+- Integrate analytics and conversion tracking.
 
-| Breakpoint | Behavior |
-|---|---|
-| **Desktop** (1024px+) | Full layout, horizontal timeline, 3-column grids |
-| **Tablet** (768-1023px) | 2-column grids, adjusted spacing |
-| **Mobile** (<768px) | Single column, hamburger menu, vertical timeline, carousel testimonials, smaller butterfly |
+## Project Structure
 
-## 🔮 Improvements With More Time
-
-- **Database Integration**: Replace local JSON storage with PostgreSQL/MongoDB for lead data
-- **Email Notifications**: Send confirmation emails to leads via SendGrid/Resend
-- **CMS Integration**: Connect to headless CMS (Contentful/Sanity) for content management
-- **Analytics**: Add PostHog/Google Analytics for user behavior tracking
-- **A/B Testing**: Test different CTA copy and button placements
-- **Accessibility Audit**: Full WCAG 2.1 AA compliance review
-- **Performance**: Image optimization with Next.js Image, lazy loading sections
-- **i18n**: Multi-language support for global enterprise clients
-- **WebGL Butterfly**: Upgrade to 3D butterfly with realistic wing membrane shaders
-- **Admin Dashboard**: Build a protected route to view and manage captured leads
-
-## 📂 Project Structure
-
-```
+```text
 accredian-enterprise/
 ├── src/
 │   ├── app/
-│   │   ├── api/leads/route.ts    # Lead capture API
-│   │   ├── globals.css           # Design system & animations
-│   │   ├── layout.tsx            # Root layout with SEO
-│   │   └── page.tsx              # Main landing page
+│   │   ├── api/leads/route.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
 │   ├── components/
-│   │   ├── Navbar.tsx            # Sticky frosted nav
-│   │   ├── Hero.tsx              # Hero with SVG illustration
-│   │   ├── Butterfly.tsx         # Canvas butterfly animation
-│   │   ├── CausticBackground.tsx # Animated light overlay
-│   │   ├── Stats.tsx             # Animated counters
-│   │   ├── Clients.tsx           # Marquee logos
-│   │   ├── AccredianEdge.tsx     # Timeline component
-│   │   ├── DomainExpertise.tsx   # Domain cards grid
-│   │   ├── CourseSegmentation.tsx# Course category cards
-│   │   ├── HowItWorks.tsx        # Step process cards
-│   │   ├── FAQs.tsx              # Accordion component
-│   │   ├── Testimonials.tsx      # Testimonial carousel
-│   │   ├── Footer.tsx            # Site footer
-│   │   └── LeadModal.tsx         # Lead capture form modal
-│   └── lib/
-│       └── constants.ts          # All content data
-├── vercel.json                   # Deployment config
-├── .env.example                  # Environment docs
-└── README.md
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Stats.tsx
+│   │   ├── Clients.tsx
+│   │   ├── AccredianEdge.tsx
+│   │   ├── DomainExpertise.tsx
+│   │   ├── CourseSegmentation.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── FAQs.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Footer.tsx
+│   │   ├── LeadModal.tsx
+│   │   ├── CausticBackground.tsx
+│   │   └── FloatingFish.tsx
+│   └── lib/constants.ts
+├── README.md
+└── vercel.json
 ```
-
-## 📄 License
-
-This project was created as an assignment submission. All rights reserved.

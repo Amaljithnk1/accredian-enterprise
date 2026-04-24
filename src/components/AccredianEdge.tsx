@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 import { EDGE_ITEMS } from "@/lib/constants";
 import FloatingFish from "./FloatingFish";
 import {
-  Settings,
-  GraduationCap,
   Lightbulb,
-  Cpu,
-  LayoutGrid,
-  TrendingUp,
-  Truck,
+  MessageSquare,
+  RefreshCw,
+  Globe,
+  Maximize2,
+  Target,
+  Package,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
-  Settings,
-  GraduationCap,
   Lightbulb,
-  Cpu,
-  LayoutGrid,
-  TrendingUp,
-  Truck,
+  MessageSquare,
+  RefreshCw,
+  Globe,
+  Maximize2,
+  Target,
+  Package,
 };
 
 export default function AccredianEdge() {
